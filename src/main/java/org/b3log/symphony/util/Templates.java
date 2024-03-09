@@ -17,10 +17,7 @@
  */
 package org.b3log.symphony.util;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateExceptionHandler;
-import freemarker.template.Version;
+import freemarker.template.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -32,7 +29,7 @@ import java.io.File;
  * Templates utilities.
  *
  * @author <a href="http://88250.b3log.org">Liang Ding</a>
- * @version 2.0.0.2, Jun 20, 2020
+ * @version 2.0.0.3, Nov 15, 2023
  * @since 1.3.0
  */
 public final class Templates {
@@ -56,11 +53,16 @@ public final class Templates {
         TEMPLATE_CFG = new Configuration(FREEMARKER_VER);
         TEMPLATE_CFG.setDefaultEncoding("UTF-8");
         try {
-            String path = Templates.class.getResource("/").getPath();
+            String path = Templates.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+            LOGGER.log(Level.DEBUG, "Code source path: " + path);
             if (StringUtils.contains(path, "/target/classes/") || StringUtils.contains(path, "/target/test-classes/")) {
                 // 开发时使用源码目录
                 path = StringUtils.replace(path, "/target/classes/", "/src/main/resources/");
                 path = StringUtils.replace(path, "/target/test-classes/", "/src/main/resources/");
+            }
+            if (StringUtils.contains(path, "/target/symphony/")) {
+                // 开发时使用源码目录
+                path = StringUtils.replace(path, "/target/symphony/", "/src/main/resources/");
             }
             path += "skins";
             TEMPLATE_CFG.setDirectoryForTemplateLoading(new File(path));

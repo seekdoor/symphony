@@ -3,8 +3,8 @@
 <br><br>
 下一代的社区系统，为未来而构建
 <br><br>
-<a title="Build Status" target="_blank" href="https://travis-ci.org/88250/symphony"><img src="https://img.shields.io/travis/88250/symphony.svg?style=flat-square"></a>
-<a title="Docker Image CI" target="_blank" href="https://github.com/88250/symphony/actions"><img src="https://img.shields.io/github/workflow/status/88250/symphony/Docker%20Image%20CI?label=Actions&logo=github&style=flat-square"></a>
+<a title="Build Status" target="_blank" href="https://github.com/88250/symphony/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/88250/symphony/ci.yml?style=flat-square"></a>
+<a title="Docker Image CI" target="_blank" href="https://github.com/88250/symphony/actions"><img src="https://img.shields.io/github/actions/workflow/status/88250/symphony/dockerimage.yml?label=Actions&logo=github&style=flat-square"></a>
 <a title="Code Size" target="_blank" href="https://github.com/88250/symphony"><img src="https://img.shields.io/github/languages/code-size/88250/symphony.svg?style=flat-square"></a>
 <a title="AGPLv3" target="_blank" href="https://www.gnu.org/licenses/agpl-3.0.txt"><img src="http://img.shields.io/badge/license-AGPLv3-orange.svg?style=flat-square"></a>
 <a title="Releases" target="_blank" href="https://github.com/88250/symphony/releases"><img src="https://img.shields.io/github/release/88250/symphony.svg?style=flat-square"></a>
@@ -12,7 +12,7 @@
 <a title="Release Date" target="_blank" href="https://github.com/88250/symphony/releases"><img src="https://img.shields.io/github/release-date/88250/symphony.svg?style=flat-square&color=99CCFF"></a>
 <a title="Downloads" target="_blank" href="https://github.com/88250/symphony/releases"><img src="https://img.shields.io/github/downloads/88250/symphony/total.svg?style=flat-square"></a>
 <a title="Docker Pulls" target="_blank" href="https://hub.docker.com/r/b3log/symphony"><img src="https://img.shields.io/docker/pulls/b3log/symphony.svg?style=flat-square&color=blueviolet"></a>
-<a title="Docker Image Size" target="_blank" href="https://hub.docker.com/r/b3log/symphony"><img src="https://img.shields.io/microbadger/image-size/b3log/symphony.svg?style=flat-square&color=ff96b4"></a>
+<a title="Docker Image Size" target="_blank" href="https://hub.docker.com/r/b3log/symphony"><img src="https://img.shields.io/docker/image-size/b3log/symphony.svg?style=flat-square&color=ff96b4"></a>
 <br>
 <a title="GitHub Commits" target="_blank" href="https://github.com/88250/symphony/commits/master"><img src="https://img.shields.io/github/commit-activity/m/88250/symphony.svg?style=flat-square"></a>
 <a title="Last Commit" target="_blank" href="https://github.com/88250/symphony/commits/master"><img src="https://img.shields.io/github/last-commit/88250/symphony.svg?style=flat-square&color=FF9900"></a>
@@ -50,28 +50,6 @@
 * 缺少创新、好玩的特性，缺少现代化的交互元素和用户体验
 * 缺乏考虑实际运营需求，管理功能过于单一
 * 细节不够精致、缺乏长期维护
-
-## 🗃 案例
-
-社区版：
-
-* [宽客网](http://www.cnq.net)
-* [AIQ-机器学习](http://www.6aiq.com)
-* [许昌IT圈](http://www.xcitq.com)
-* [凤凰匯](https://www.fengd.com)
-* [俩猴网](http://www.xfx77.cn)
-* [艺赛旗 RPA](http://support.i-search.com.cn)（商用授权）
-* [北极社区](https://begeek.bwae.org)（商用授权）
-* [神州邦邦](https://c.shenzhoubb.com)（商用授权）
-* ......
-
-商业版：
-
-* [链滴](https://ld246.com)
-* [乾学院](http://c.raqsoft.com.cn)
-* [快递100](https://bbs.kuaidi100.com)
-* [金蝶精斗云社区](https://cs.jdy.com)
-* ......
 
 ## ✨  特性
 
@@ -729,6 +707,11 @@ API
 * 云服务：提供开箱即用的云端服务，每年 ¥5000（暂时售罄）
 
 **关于商业版和社区版的对比请看[这里](https://ld246.com/article/1500543226433)，企业网站、经营性网站、以营利为目的或实现盈利的网站请购买商业版。**
+
+## 🔓 已知的安全漏洞
+
+* [使用 MD5 存储密码不安全](https://github.com/88250/symphony/issues/74)
+* [前后端传递密码方式不安全](https://github.com/88250/symphony/issues/75)
 
 ## 🙏 鸣谢
 
